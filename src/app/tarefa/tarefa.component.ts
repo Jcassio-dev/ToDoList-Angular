@@ -6,15 +6,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./tarefa.component.css']
 })
 export class TarefaComponent implements OnInit{
+  TAREFA_KEY = 'tarefa_key'
   listaTarefas : any[] = [];
-  estado: boolean = false;
+
 
   ngOnInit(): void {
-    this.listaTarefas = [
-      {id: 0, nome: 'Lavar o carro', concluido: false},
-      {id: 1, nome: 'Lavar a louça', concluido: true},
-      {id: 2, nome: 'Lavar roupas', concluido: false}
-    ]
+    const tarefas = localStorage.getItem(this.TAREFA_KEY)
+    if(tarefas){
+      this.listaTarefas = JSON.parse(tarefas)
+    }
   }
 
 
@@ -25,10 +25,12 @@ export class TarefaComponent implements OnInit{
     const tarefaEncontrada = this.listaTarefas.find(tarefa => tarefa.nome.toLowerCase() == nomeTarefa.toLowerCase())
     
     tarefaEncontrada ? alert('Essa tarefa já existe!') : this.listaTarefas.push({id: this.listaTarefas.length, nome:nomeTarefa, concluido: false});
+    this.saveInLocalStorage();
   }
 
   deletar(idTarefa: number){
-    this.listaTarefas = this.listaTarefas.filter(tarefa => tarefa.id !== idTarefa)
+    this.listaTarefas = this.listaTarefas.filter(tarefa => tarefa.id !== idTarefa);
+    this.saveInLocalStorage();
   }
 
   handleChangeConcluidoState(idTarefa: number){
@@ -37,6 +39,10 @@ export class TarefaComponent implements OnInit{
         tarefa.concluido = !tarefa.concluido
       }
     })
-    
+    this.saveInLocalStorage();
+  }
+
+  saveInLocalStorage(){
+    localStorage.setItem(this.TAREFA_KEY, JSON.stringify(this.listaTarefas));
   }
 }
