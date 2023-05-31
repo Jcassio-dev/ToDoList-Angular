@@ -1,27 +1,75 @@
-# GerenciadorDeTarefa
+<p align="center">
+ <a href="#Description">Description</a> •
+ <a href="#Features">Features</a> • 
+ <a href="#Technologies">Technologies</a> •
+ <a href="#How to use">How to use</a> •
+ <a href="#Software">Software</a> 
+</p>
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.0.3.
+Angular - To Do List
+<div align="center">
 
-## Development server
+https://github.com/Jcassio-dev/RocketNotes-FrontEnd/assets/62391659/6c205b32-9f65-43ed-95a3-9a9097fa6f96
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+</div>
+<div id="Description">
 
-## Code scaffolding
+## Description
+Projeto desenvolvido em angular para aplicar conceitos aprendidos.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+</div> 
+<div id="Features">
 
-## Build
+### Features
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+- [x] Angular
+- [x] Responsiviness
+- [x] Material Icons
 
-## Running unit tests
+</div>
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+<div id="Technologies">
 
-## Running end-to-end tests
+## Technologies:
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+- Languages: `Javascript` `CSS` `HTML`
+- Libraries: `Angular` `Material Icons`
+- Version control: `Git & Github`
 
-## Further help
+</div>
+<div id="How to use">
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+## How to use:
+
+#### Clone this repository
+
+```bash
+$ git clone https://github.com/Jcassio-dev/ToDoList-Angular.git
+```
+
+#### Access project folder in terminal/cmd
+
+```bash
+$ cd /ToDoList-Angular
+```
+
+#### Install the dependencies
+
+```bash
+$ npm install
+```
+
+#### Run the application in development mode
+
+```bash
+$ npx ng serve
+```
+#### The server will start on port:4200 - go to <http://localhost:4200> 
+
+</div>
+<div id="Software">
+
+## Software
+
+VSCode
+</div>
