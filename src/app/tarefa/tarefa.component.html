@@ -6,8 +6,9 @@
     </div>
     <ul>
         <li *ngFor="let tarefa of listaTarefas">
-        <div class="ul_item">
-            <p>{{tarefa.nome}}</p>
+        <div class="ul_item" (click)="handleChangeConcluidoState(tarefa.id)">
+            <p *ngIf="!tarefa.concluido" class="concluir">{{tarefa.nome}}</p>
+            <p *ngIf="tarefa.concluido" class="concluido">{{tarefa.nome}}</p>
             <button (click)="deletar(tarefa.id)"><span class="material-icons">delete</span></button>
         </div>
         </li>

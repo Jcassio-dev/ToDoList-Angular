@@ -6,7 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./tarefa.component.css']
 })
 export class TarefaComponent implements OnInit{
-  listaTarefas : any[] = []
+  listaTarefas : any[] = [];
+  estado: boolean = false;
 
   ngOnInit(): void {
     this.listaTarefas = [
@@ -28,5 +29,14 @@ export class TarefaComponent implements OnInit{
 
   deletar(idTarefa: number){
     this.listaTarefas = this.listaTarefas.filter(tarefa => tarefa.id !== idTarefa)
+  }
+
+  handleChangeConcluidoState(idTarefa: number){
+    this.listaTarefas.map(tarefa => {
+      if(tarefa.id === idTarefa){
+        tarefa.concluido = !tarefa.concluido
+      }
+    })
+    
   }
 }
