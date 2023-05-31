@@ -1,9 +1,14 @@
-<div>
+<div class="input_container">
     <h3>Lista de Tarefas</h3>
-    <input type="text" placeholder="Escreva uma tarefa" #inputTarefa/>
-    <button type="button" (click)="adicionar(inputTarefa.value)">Adicionar</button>
-    <ul *ngFor="let tarefa of listaTarefas">
-        <input type="checkbox" checked="{{tarefa.concluido}}" #inputConcluido>
-        <li>{{tarefa.nome}}</li>
-        <button (click)="deletar(tarefa.id)">Deletar</button>
+    <div class="input_wrapper">
+        <input type="text" placeholder="Escreva uma tarefa" #inputTarefa/>
+        <button type="button" (click)="adicionar(inputTarefa.value)">Adicionar</button>
+    </div>
+    <ul>
+        <li *ngFor="let tarefa of listaTarefas">
+        <div class="ul_item">
+            <p>{{tarefa.nome}}</p>
+            <button (click)="deletar(tarefa.id)"><span class="material-icons">delete</span></button>
+        </div>
+        </li>
     </ul>
